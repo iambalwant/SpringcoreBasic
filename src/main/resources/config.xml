@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--//metadata
+Best practice: always keep Spring XML configs inside src/main/resources/.
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+<!--    //this is our beans-->
+<!--    methods to inject value into setter through beans-->
+    <!--primitive type: int,char,string,etc -->
+
+    <!--attribute method-->
+    <bean class="com.springcore.Students" name="student1">
+        <!-- with the help of property we use setter injection -->
+        <property name="studentId" value="224477"/>
+        <property name="studentName" value="Balwant"/>
+        <property name="studentAddress" value="jaipur"/>
+    </bean>
+<!--    p schma method -->
+    <bean class="com.springcore.Students" name="student2" p:studentId="224477" p:studentName="Balwantverma" p:studentAddress="Delhi"/>
+
+
+
+</beans>

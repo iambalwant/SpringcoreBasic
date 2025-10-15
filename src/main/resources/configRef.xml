@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--//metadata
+Best practice: always keep Spring XML configs inside src/main/resources/.
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+<!--    //this is our beans-->
+<!--    methods to inject value into setter through beans-->
+    <!--reference type -->
+<!--    A is dependent to B-->
+<bean class="com.springcore.ref.B" name="bRef">
+    <property name="y" value="90"/>
+</bean>
+<!--    When it's create A object it's put 12 in X and Put B ref in A ob-->
+<bean class="com.springcore.ref.A" name="aRef">
+    <property name="x" value="12"/>
+
+<!--    <property name="ob">-->
+<!--        <ref bean="bRef"/>-->
+<!--    </property>-->
+    <property name="ob" ref="bRef"/>
+</bean>
+
+</beans>

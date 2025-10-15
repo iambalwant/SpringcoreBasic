@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--//metadata
+Best practice: always keep Spring XML configs inside src/main/resources/.
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+<!--    //this is our beans-->
+<!--    methods to inject value into setter through beans-->
+    <!--collection type: List, set, Map,properties,etc. -->
+    <bean class="com.springcore.collections.Emp" name="beanCollection">
+        <property name="name" value="Bawlant"/>
+        <property name="phones">
+            <list>
+                <value>789945611</value>
+                <value>789945612</value>
+                <value>789945613</value>
+                <value>789945614</value>
+            </list>
+        </property>
+        <property name="address">
+            <set>
+                <value>Delhi</value>
+                <value>Delhi2</value>
+                <value>Delhi3</value>
+                <value>Delhi4</value>
+            </set>
+        </property>
+        <property name="courses">
+             <map>
+                 <entry key="java" value="2 month"/>
+                 <entry key="html" value="3 month"/>
+                 <entry key="css" value="4 month"/>
+                 <entry key="typescript" value="5 month"/>
+             </map>
+        </property>
+
+
+    </bean>
+
+
+</beans>
