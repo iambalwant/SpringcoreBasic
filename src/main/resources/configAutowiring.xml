@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--//metadata
+Best practice: always keep Spring XML configs inside src/main/resources/.
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+<!--we can't use autowiring in string in address both are string -->
+<bean class="com.springcore.autowiringXML.Address" name="address">
+    <property name="street" value="khatipura"/>
+    <property name="city" value="jaipur"/>
+</bean>
+<!--we can use the autowiring in employee because it's need object of a class-->
+<!--    by name in XML , byType it's check type (e.g. Address type)-->
+<bean class="com.springcore.autowiringXML.Employee" name="employee" autowire="byName"/>
+
+
+</beans>

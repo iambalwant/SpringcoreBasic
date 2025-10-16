@@ -15,6 +15,7 @@ public class Test {
 //        //through interface method
 //        BeamInterface beanInterface =(BeamInterface) context.getBean("interface");
 //        System.out.println(beanInterface);
+        //through annotations
         BeamAnn Bean =(BeamAnn) context.getBean("ann");
         System.out.println(Bean);
     }
