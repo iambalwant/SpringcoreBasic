@@ -18,6 +18,11 @@ Best practice: always keep Spring XML configs inside src/main/resources/.
     <property name="street" value="khatipura"/>
     <property name="city" value="jaipur"/>
 </bean>
+
+    <bean class="com.springcore.autowiringAnn.Address" name="address2">
+        <property name="street" value="khatipura2"/>
+        <property name="city" value="jaipur2"/>
+    </bean>
 <!--we can use the autowiring in employee because it's need object of a class-->
 <bean class="com.springcore.autowiringAnn.Employee" name="employee"/>
 
